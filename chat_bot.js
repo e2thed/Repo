@@ -48,7 +48,7 @@ bot.on('speak', function (data) {
 });
 
 bot.on('newsong', function (data) {
-	var userid = data.userid;
+	var userid = data.room.metadata.current_dj;
 	if(userid != '50bc2750aaa5cd5f9938fc3b'){
 		songID = data.room.metadata.current_song._id;
 		bot.playlistAdd(songID);
